@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import '../../css/Search.css';
-
+SearchForm
 class SearchForm extends Component {
   constructor(props) {
-    super(props)
-      this.state = {
-        value: ''
-      }
-    this.findClick.bind(this)
-    this.changeInput.bind(this)
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  changeInput(e) {
-      this.setState({ value: e.target.value })
+  handleChange(event) {
+    this.setState({value: event.target.value});
   }
 
-  findClick() {
-    const { value } = this.state
-    if (value) this.props.searchTweet(value)
+  handleSubmit() {
+    fetch(`/users/${this.state.value}`)
+    .then(res => res.json())
+    .then(twits => this.props.searchTweet(twits))
   }
 
   render() {
     return (
       <section className="search-form">
-          <input type="text" onChange={this.changeInput} />
-          <button onClick={this.findClick}>.</button>
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <button type="submit" onClick={this.handleSubmit}>search</button>
       </section>
-      )
-    }
+    );
   }
+}
 
 export default SearchForm

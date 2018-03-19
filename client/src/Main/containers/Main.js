@@ -3,35 +3,30 @@ import '../../css/Main.css';
 import SearchForm from '../components/SearchForm'
 import ListTwits from '../components/ListTwits'
 
-import tweets from '../api.js'
-
 class Main extends Component {
   constructor(props) {
     super(props)
       this.state = {
-        tweets: []
+        twits: []
       }
-    this.searchTweet.bind(this)
+  this.searchTweet = this.searchTweet.bind(this)
   }
 
-componentDidMount() {
-  this.setState({ tweets: tweets })
-}
-
-searchTweet(value) {
-  console.log("search by: ", value);
+searchTweet(twits) {
+  console.log('twits', twits);
+  this.setState({ twits: twits })
 }
 
   render() {
-    const { tweets } = this.state
 
+    console.log('df',this.state.twits);
     return (
       <section className="main-container">
         <SearchForm
           searchTweet={this.searchTweet}
         />
         <ListTwits
-          tweets={tweets}
+          twits={this.state.twits}
         />
       </section>
     );

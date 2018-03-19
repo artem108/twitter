@@ -8,17 +8,24 @@ var T = new Twit(config)
 
 var params = {
     q: '#rainbow',
-    count: 5
+    count: 15
   }
 
 function getData(err, data, response) {
   var tweets = data.statuses
   for (var i = 0; i < tweets.length; i++) {
-    console.log(tweets[i].entities.hashtags)
-    console.log('____________');
+    // console.log(tweets[i].entities.hashtags)
+    // console.log('____________');
   }
 }
 T.get('search/tweets', params, getData)
+
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
 
 
 // var tweet = {
@@ -30,8 +37,3 @@ T.get('search/tweets', params, getData)
 // T.post('statuses/update', tweet, tweeted)
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
