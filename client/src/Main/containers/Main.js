@@ -12,14 +12,11 @@ class Main extends Component {
   this.searchTweet = this.searchTweet.bind(this)
   }
 
-searchTweet(twits) {
-  console.log('twits', twits);
-  this.setState({ twits: twits })
-}
+  searchTweet(twits) {
+    this.setState({ twits: twits })
+  }
 
   render() {
-
-    console.log('df',this.state.twits);
     return (
       <section className="main-container">
         <SearchForm

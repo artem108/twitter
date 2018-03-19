@@ -4,8 +4,9 @@ SearchForm
 class SearchForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-
+      this.state = {
+        value: ''
+      };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,8 +17,8 @@ class SearchForm extends Component {
 
   handleSubmit() {
     fetch(`/users/${this.state.value}`)
-    .then(res => res.json())
-    .then(twits => this.props.searchTweet(twits))
+      .then(res => res.json())
+      .then(twits => this.props.searchTweet(twits))
   }
 
   render() {

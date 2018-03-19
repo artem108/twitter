@@ -6,15 +6,13 @@
 	border: none;
 	padding: 0;
 	margin: 0;
-  font-family: 'VT323', monospace;
+  font-family: Helvetica, Roboto,"Segoe UI",Calibri,sans-serif;
 	}
 body {
 	padding: 5px;
 	background-image: linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
 	}
-h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl {
-	margin: 20px 0;
-	}
+
 li, dd, blockquote {
 	margin-left: 40px;
 	list-style: none;
