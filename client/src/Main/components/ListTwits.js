@@ -8,7 +8,7 @@ class ListTwits extends Component {
     super();
     this.state = {
       currentPage: 1,
-      twitsPerPage: 2
+      twitsPerPage: 5
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -23,7 +23,6 @@ class ListTwits extends Component {
   const { twits } = this.props
     const {currentPage, twitsPerPage } = this.state;
 
-    // Logic for displaying current todos
     const indexOfLastTwit = currentPage * twitsPerPage;
     const indexOfFirstTwit = indexOfLastTwit - twitsPerPage;
     const currentTwit = twits.slice(indexOfFirstTwit, indexOfLastTwit);
@@ -47,23 +46,23 @@ class ListTwits extends Component {
 
   return (
     <section className="tweets-container">
-          <section className="timeline-tweets">
-          {
-            currentTwit.map((item, index) => {
-              return  <TimelineList tweet={item} key={item.id}/>
-            })
-          }
-          <div style={{display: 'flex'}}>
+      <section className="timeline-tweets">
+         <div className="pagination-container">
             {renderPageNumbers}
-        </div>
-        </section>
-        <section className="grid-tweets">
+          </div>
+            {
+              currentTwit.map((item, index) => {
+                return  <TimelineList tweet={item} key={item.id}/>
+              })
+            }
+          </section>
+        {/* <section className="grid-tweets"> */}
           {
             // currentTwit.map(item => {
             //   return <GridList tweet={item} key={item.id} />
             //   })
           }
-        </section>
+        {/*</section>*/}
     </section>
   )
 }

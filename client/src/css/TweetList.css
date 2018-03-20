@@ -3,9 +3,16 @@
   justify-content: space-around;
   margin-top: 50px;
 }
-.grid-tweets {
-  width: 44%;
+
+.pagination-container {
+  width: 500px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
- .timeline-tweets {
-  width: 44%;
- }
+
+.pagination-container p {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}

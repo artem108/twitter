@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import '../../css/Search.css';
-SearchForm
+
 class SearchForm extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        value: ''
+        value: '',
       };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,7 +17,7 @@ class SearchForm extends Component {
   }
 
   handleSubmit() {
-    fetch(`/users/${this.state.value}`)
+    fetch(`/tweets/${this.state.value}`)
       .then(res => res.json())
       .then(twits => this.props.searchTweet(twits))
   }

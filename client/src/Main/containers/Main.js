@@ -21,6 +21,7 @@ class Main extends Component {
       <section className="main-container">
         <SearchForm
           searchTweet={this.searchTweet}
+          isLoading={this.isLoading}
         />
         <ListTwits
           twits={this.state.twits}
