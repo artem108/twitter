@@ -3,6 +3,7 @@ import '../../css/TimeLine.css'
 
 const GridList = (props) => {
   const { tweet } = props
+
   return (
     <section className="timeline-box">
       <img className="avatar" src={tweet.user.profile_image_url}/>

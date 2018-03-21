@@ -17,9 +17,7 @@ class SearchForm extends Component {
   }
 
   handleSubmit() {
-    fetch(`/tweets/${this.state.value}`)
-      .then(res => res.json())
-      .then(twits => this.props.searchTweet(twits))
+    this.props.searchTweet(this.state.value)
   }
 
   render() {

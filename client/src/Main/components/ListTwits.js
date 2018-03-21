@@ -8,7 +8,7 @@ class ListTwits extends Component {
     super();
     this.state = {
       currentPage: 1,
-      twitsPerPage: 5
+      twitsPerPage: 10
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -43,6 +43,7 @@ class ListTwits extends Component {
         </p>
       );
     });
+
 
   return (
     <section className="tweets-container">
